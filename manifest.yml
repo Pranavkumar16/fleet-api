@@ -1,0 +1,15 @@
+---
+applications:
+  - name: fleet-api
+    memory: 512M
+    instances: 1
+    buildpacks:
+      - python_buildpack
+    command: python -m uvicorn app:app --host 0.0.0.0 --port ${PORT}
+    env:
+      # optional: turn the /admin dashboard on/off in prod
+      ENABLE_ADMIN: "false"            # set "true" only for dev
+      ADMIN_USERNAME: "admin"          # if you kept the simple auth
+      ADMIN_PASSWORD: "secret"
+      # If you use an external Postgres, set DATABASE_URL here:
+      # DATABASE_URL: "postgresql://user:pwd@host:5432/dbname"

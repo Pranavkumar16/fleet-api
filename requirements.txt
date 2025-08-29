@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy>=2.0
+pydantic
+python-multipart
+sqladmin==0.16.0
+itsdangerous
+jinja2
+pandas
+openpyxl
+swagger-ui-bundle
+pydantic-settings

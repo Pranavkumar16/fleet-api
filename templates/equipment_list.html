@@ -1,0 +1,9 @@
+{# templates/equipment_list.html #}
+{% extends "sqladmin/list.html" %}
+
+{% block actions %}
+  {{ super() }}
+  <a href="/admin/equipment/upload" class="btn btn-primary ms-2">
+    + Upload
+  </a>
+{% endblock %}

@@ -1,0 +1,31 @@
+{# templates/upload_form.html #}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="container my-4">
+    <h3 class="mb-3">{{ title }}</h3>
+
+    {% if message %}
+      <div class="alert alert-info">{{ message }}</div>
+    {% endif %}
+
+    <form action="{{ action }}" method="post" enctype="multipart/form-data" class="mb-3">
+      <div class="mb-3">
+        <label class="form-label">Excel file (.xlsx)</label>
+        <input type="file" name="file" accept=".xlsx,.xlsm,.xltx,.xltm" class="form-control" required>
+      </div>
+      <button class="btn btn-primary" type="submit">Upload</button>
+      <a class="btn btn-secondary ms-2" href="{{ back_to }}">Back to list</a>
+    </form>
+
+    <p class="text-muted small">
+      Required columns (case-insensitive): <code>equipment_name</code>, <code>camp_name</code>.
+      Optional: <code>region</code>, <code>status</code>, <code>next_maintenance_date</code>,
+      <code>start_date</code>, <code>end_date</code>.
+    </p>
+  </body>
+</html>
