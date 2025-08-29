@@ -1,9 +1,7 @@
-# Python
 __pycache__/
-*.pyc
-
-# Virtual environment
+*.py[cod]
 venv/
-
-# VSCode settings
+.env
 .vscode/
+*.log
+
